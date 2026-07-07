@@ -105,9 +105,9 @@ p{margin:0 0 1em}
 .urgent-badge{display:inline-block;background:var(--gold);color:#1f2a37;font-weight:700;padding:.15rem .55rem;border-radius:4px;font-size:.72rem;letter-spacing:.08em;margin-right:.6rem;vertical-align:middle}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:.25s}
-.site-header.scrolled{background:rgba(255,255,255,.96);border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
-@media (prefers-color-scheme: dark){.site-header{background:rgba(19,25,31,.85)}.site-header.scrolled{background:rgba(19,25,31,.96)}}
+.site-header{position:sticky;top:0;z-index:50;background:#fbf8ef;border-bottom:0;transition:.25s}
+.site-header.scrolled{background:#fbf8ef;box-shadow:var(--shadow-sm)}
+@media (prefers-color-scheme: dark){.site-header{background:#13191f}.site-header.scrolled{background:#13191f}}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem 1.25rem;gap:.9rem}
 .logo{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none}
 .logo-mark img{width:34px;height:34px;border-radius:50%;background:#000;object-fit:cover;display:block}
@@ -296,8 +296,8 @@ p{margin:0 0 1em}
 .contact-card strong{font-size:.95rem;grid-column:2}
 
 /* Footer */
-.site-footer{background:linear-gradient(135deg,var(--night),var(--night-2));color:#dcd6c6;padding:2.25rem 0 1rem}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.site-footer{background:linear-gradient(135deg,var(--night),var(--night-2));color:#dcd6c6;padding:1.75rem 0 .75rem}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:1.25rem;padding-bottom:1.15rem;border-bottom:1px solid rgba(255,255,255,.08)}
 @media(max-width:880px){.foot{grid-template-columns:1fr 1fr;gap:1.5rem}}
 @media(max-width:560px){.foot{grid-template-columns:1fr 1fr;gap:1.25rem 1.1rem}.foot-brand,.foot-contact{grid-column:1 / -1}.foot-brand{margin-bottom:.25rem}}
 .foot-brand p{color:rgba(255,255,255,.72);max-width:30ch;margin-top:.5rem;font-size:.92rem;line-height:1.5}
@@ -306,14 +306,14 @@ p{margin:0 0 1em}
 .foot-links strong,.foot-contact strong{color:#fff;font-family:var(--serif);font-size:1rem;font-weight:700;margin-bottom:.25rem;letter-spacing:.01em}
 .foot-links a,.foot-contact a{color:rgba(255,255,255,.78)}
 .foot-links a:hover,.foot-contact a:hover{color:var(--gold-soft);text-decoration:none}
-.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-top:.85rem;font-size:.8rem}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem;padding-top:.6rem;font-size:.78rem}
 .foot-bottom p{margin:0;color:rgba(255,255,255,.55)}
 
 /* Mobile action bar */
-.mobile-action-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08);z-index:40;padding:.4rem .25rem calc(.4rem + env(safe-area-inset-bottom));grid-template-columns:1fr 1fr 1fr}
-@media(max-width:720px){.mobile-action-bar{display:grid}.site-footer{padding-bottom:4.5rem;padding-top:1.75rem}}
+.mobile-action-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08);z-index:40;padding:.2rem .25rem calc(.2rem + env(safe-area-inset-bottom));grid-template-columns:1fr 1fr 1fr}
+@media(max-width:720px){.mobile-action-bar{display:grid}.site-footer{padding-bottom:3.75rem;padding-top:1.5rem}}
 @media (prefers-color-scheme: dark){.mobile-action-bar{background:var(--night-2)}}
-.mab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.5rem;color:var(--ink);text-decoration:none;font-size:.72rem;font-weight:600;border-radius:8px}
+.mab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.1rem;padding:.35rem .5rem;color:var(--ink);text-decoration:none;font-size:.7rem;font-weight:600;border-radius:8px;line-height:1.1}
 .mab-btn:hover{text-decoration:none;background:var(--cream-2)}
 .mab-call{color:var(--gold-deep)}
 .mab-ico{font-size:1.2rem;line-height:1}
