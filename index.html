@@ -54,8 +54,8 @@
   :root{
     --bg:#13191f;
     --bg-alt:#1a2129;
-    --ink:#f1ecdc;
-    --ink-soft:#b8b3a3;
+    --ink:#f5efe0;
+    --ink-soft:#d8d2c2; /* boosted for readability on dark backgrounds (was #b8b3a3) */
     --line:#2a3340;
     --cream:#1a2129;
     --cream-2:#222a34;
@@ -170,7 +170,9 @@ p{margin:0 0 1em}
 .trust-grid strong{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.4rem);color:var(--gold-deep);font-weight:700;line-height:1;display:inline-flex;align-items:baseline;gap:.05em}
 .trust-grid .counter,.trust-grid .big-zero{display:inline-block;line-height:1}
 .trust-grid .slash{opacity:.4;margin:0 .05em;font-weight:400}
-.trust-grid span{font-size:.88rem;color:var(--ink-soft);letter-spacing:.02em;max-width:18ch}
+.trust-grid > div > span{font-size:1.02rem;color:var(--ink-soft);letter-spacing:.02em;max-width:18ch;line-height:1.35}
+@media(max-width:720px){.trust-grid > div > span{font-size:.98rem}}
+.trust-grid strong > span{font-size:inherit;color:inherit}
 @media(max-width:720px){.trust-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;padding:2rem 1.25rem}}
 
 /* Section heads */
@@ -317,7 +319,7 @@ p{margin:0 0 1em}
 .mab-ico{font-size:1.2rem;line-height:1}
 
 /* Reveal */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:.35;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-bg{animation:none}}
 
@@ -503,9 +505,9 @@ h3{font-size:1.4rem;line-height:1.35}
 .hero .lede{font-size:1.15rem !important}
 @media(min-width:1100px){.hero .lede{font-size:1.25rem !important}}
 
-/* Trust strip labels */
-.trust-grid span{font-size:1rem !important;line-height:1.4}
-@media(min-width:1100px){.trust-grid span{font-size:1.05rem !important}}
+/* Trust strip labels — target only the descriptive label span, NOT the number spans inside <strong> */
+.trust-grid > div > span{font-size:1.02rem !important;line-height:1.4 !important}
+@media(min-width:1100px){.trust-grid > div > span{font-size:1.1rem !important}}
 
 /* Why / Service / City card text */
 .why-card p,.service-card p,.city-card p{font-size:1rem;line-height:1.6;color:var(--ink-soft)}
