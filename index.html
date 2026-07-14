@@ -153,7 +153,8 @@ p{margin:0 0 1em}
 
 /* Hero */
 .hero{position:relative;min-height:auto;padding:2.5rem 0 2.75rem;display:flex;align-items:center;color:#fff;overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;animation:kenburns 20s ease-in-out infinite alternate}
+.hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;animation:kenburns 20s ease-in-out infinite alternate;will-change:transform}
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
 .hero-scrim{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,28,.78),rgba(15,20,28,.45) 60%,rgba(160,124,44,.35));z-index:-1}
 .hero-inner{padding:1.5rem 1.25rem;max-width:780px}
@@ -315,7 +316,7 @@ p{margin:0 0 1em}
 /* Reveal */
 .reveal{opacity:.35;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-bg{animation:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-bg img{animation:none}}
 
 /* Page hero */
 .page-hero{background:linear-gradient(135deg,var(--cream),var(--cream-2));padding:4.5rem 0 3rem;text-align:left;border-bottom:1px solid var(--line)}
@@ -955,7 +956,14 @@ h3{font-size:1.4rem;line-height:1.35}
 <main id="main">
 
 <section class="hero" id="top">
-  <div class="hero-bg" style="background-image:url('assets/hero-collage.jpg')"></div>
+  <div class="hero-bg">
+    <img src="assets/hero-single.jpg"
+         srcset="assets/hero-single-mobile.jpg 900w, assets/hero-single.jpg 1920w"
+         sizes="100vw"
+         alt="A caring adult daughter sitting with her elderly mother in a warm, sunlit senior living room"
+         fetchpriority="high"
+         decoding="async" />
+  </div>
   <div class="hero-scrim"></div>
   <div class="container hero-inner">
     <p class="eyebrow eyebrow-light">Ventura County · Family-Founded</p>
@@ -1037,7 +1045,7 @@ h3{font-size:1.4rem;line-height:1.35}
       <p class="eyebrow">Our Story</p>
       <h2>Born From Our Own Family's Journey</h2>
       <p>When our own grandfather needed help, we discovered how hard it was to find the right home. The system felt fragmented — no one seemed to look at his whole story, his medical needs, and what truly made him feel at home.</p>
-      <p>Our family was able to navigate the gaps because of two decades of hospice care experience. We created Guiding Light Senior Placement so other families don't have to go it alone — walking with you from the first call to move-in day with patience, honesty, and heart.</p>
+      <p>Our family was able to navigate the gaps because of two decades of hospice care experience. We created Guiding Light Senior Placement so other families don't have to go at it alone — walking with you from the first call to move-in day with patience, honesty, and heart.</p>
       <p class="quote-callout">"We walk beside families to help them find a home that fits the person — not just the diagnosis."</p>
     </div>
     <figure class="figure">
