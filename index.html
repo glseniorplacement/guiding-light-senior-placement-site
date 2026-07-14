@@ -210,11 +210,13 @@ p{margin:0 0 1em}
 .service-card .ico svg{width:26px;height:26px}
 
 /* Steps timeline */
-.steps{counter-reset:step;list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;position:relative}
+.steps{counter-reset:step;list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative;align-items:stretch}
+@media(max-width:1100px){.steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:780px){.steps{grid-template-columns:1fr}}
 .steps li{position:relative;padding:1.5rem 1.25rem 1.15rem;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);text-align:center}
 .step-num{display:inline-flex;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:1.2rem;margin-bottom:.85rem;box-shadow:0 6px 14px rgba(160,124,44,.35)}
 .timeline li:not(:last-child)::after{content:"";position:absolute;right:-.7rem;top:55px;width:1.4rem;height:2px;background:var(--gold-soft);z-index:1}
+@media(max-width:1100px){.timeline li:not(:last-child)::after{display:none}}
 @media(max-width:780px){.timeline li:not(:last-child)::after{left:50%;right:auto;top:auto;bottom:-.85rem;width:2px;height:1.5rem}}
 
 /* Resource section */
@@ -814,11 +816,14 @@ h3{font-size:1.4rem;line-height:1.35}
   .why-card p,.service-card p{font-size:.82rem !important;line-height:1.4;margin-bottom:0}
   .why-card .ico,.service-card .ico{width:32px !important;height:32px !important;margin-bottom:.4rem !important}
   .why-card .ico svg,.service-card .ico svg{width:18px !important;height:18px !important}
-  /* Steps stays single-column but with compact horizontal layout */
-  .steps li{display:grid;grid-template-columns:auto 1fr;text-align:left;gap:.15rem .85rem;padding:.85rem 1rem !important;align-items:start}
-  .steps li h3{grid-column:2;margin:0 !important;font-size:1rem !important}
-  .steps li p{grid-column:2;font-size:.85rem !important;line-height:1.4}
-  .steps li::before{grid-row:1/3;align-self:center}
+  /* Steps: full-width vertical layout for readability with nested details */
+  .steps li{display:block;text-align:left;padding:1rem 1.1rem !important}
+  .steps li .step-num{margin:0 0 .5rem 0}
+  .steps li h3{margin:0 0 .35rem !important;font-size:1.05rem !important}
+  .steps li p{font-size:.9rem !important;line-height:1.5}
+  .steps li ul.check-list{margin-top:.6rem !important;padding-left:0 !important;list-style:none !important}
+  .steps li ul.check-list li{position:relative;padding:.15rem 0 .15rem 2rem !important;font-size:.85rem !important;border:0 !important;background:none !important;box-shadow:none !important;line-height:1.45}
+  .steps li ul.check-list li::before{left:0 !important;top:.2rem !important}
   /* Section head heading sizes are already reduced; tighten description max-width */
   .section-head{padding:0 .5rem}
   /* Testimonials: keep single col but tighter */
@@ -1014,7 +1019,7 @@ h3{font-size:1.4rem;line-height:1.35}
       <p class="eyebrow">Our Story</p>
       <h2>Born From Our Own Family's Journey</h2>
       <p>When our own grandfather needed help, we discovered how hard it was to find the right home. The system felt fragmented — no one seemed to look at his whole story, his medical needs, and what truly made him feel at home.</p>
-      <p>Our family created Guiding Light Senior Placement so other families don't have to go it alone. We walk with you from the first call to move-in day — with patience, honesty, and heart.</p>
+      <p>Our family was able to navigate the gaps because of two decades of hospice care experience. We created Guiding Light Senior Placement so other families don't have to go it alone — walking with you from the first call to move-in day with patience, honesty, and heart.</p>
       <p class="quote-callout">"We walk beside families to help them find a home that fits the person — not just the diagnosis."</p>
     </div>
     <figure class="figure">
@@ -1080,46 +1085,47 @@ h3{font-size:1.4rem;line-height:1.35}
   <div class="container">
     <header class="section-head reveal">
       <p class="eyebrow">How It Works</p>
-      <h2>Three Steps. No Pressure.</h2>
-      <p>From first call to move-in day, we walk beside you.</p>
+      <h2>Our Complete Process</h2>
+      <p>We personalize your search to find a senior living community where your loved one will truly thrive.</p>
     </header>
     <ol class="steps timeline reveal">
       <li>
         <span class="step-num">1</span>
-        <h3>Get to Know You</h3>
-        <p>We sit with you, your family, and your care team to understand medical needs, preferences, personality, and budget.</p>
+        <h3>The Initial Discovery Call</h3>
+        <p>From your very first phone call, Guiding Light Senior Placement listens attentively to understand your unique situation. We do not just look at data; we listen to your story to capture two critical areas:</p>
+        <ul class="check-list" style="text-align:left;margin-top:.6rem">
+          <li><strong>Individual Care Needs:</strong> We assess specific required assistance with Daily Living Activities (ADLs) and evaluate specialized care requirements, including memory care transition units.</li>
+          <li><strong>Personal Lifestyle Preferences:</strong> We pinpoint what makes a place feel like home — whether that means a small, cozy residential care home or a larger environment with open areas and robust social activities.</li>
+        </ul>
       </li>
       <li>
         <span class="step-num">2</span>
-        <h3>Match &amp; Recommend</h3>
-        <p>Using our deep knowledge of staffing, care, and culture, we hand-pick a few well-matched options — never a generic list.</p>
+        <h3>Personalized Vetting</h3>
+        <p>We match your care needs and lifestyle preferences against our heavily vetted network of communities to find options that empower your independence and social well-being.</p>
       </li>
       <li>
         <span class="step-num">3</span>
-        <h3>Walk Beside You</h3>
-        <p>We support you through tours, transitions, and discharge — until your loved one is settled and supported.</p>
+        <h3>Guided Community Tours</h3>
+        <p>We schedule and accompany you on tours of the top-selected communities to ensure the right questions are asked.</p>
+        <ul class="check-list" style="text-align:left;margin-top:.6rem">
+          <li><strong>Side-by-Side Advocacy:</strong> We walk through each environment with you to evaluate the atmosphere, staff engagement, and safety standards.</li>
+          <li><strong>Real-Time Feedback:</strong> We help you debrief after each visit to compare how well the community aligns with your social and physical goals.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <h3>Final Placement &amp; Transition</h3>
+        <p>We guide you through the final selection and paperwork to make move-in day as stress-free as possible.</p>
+        <ul class="check-list" style="text-align:left;margin-top:.6rem">
+          <li><strong>Logistics Coordination:</strong> We assist with the community communication and transition details required for a seamless move.</li>
+          <li><strong>Post-Placement Check-in:</strong> We follow up after the move to ensure your loved one is adjusting comfortably and receiving exceptional care.</li>
+        </ul>
       </li>
     </ol>
   </div>
 </section>
 
-<section id="resource" class="section resource-section">
-  <div class="container resource-card reveal">
-    <div class="resource-text">
-      <p class="eyebrow">Free Resource</p>
-      <h2>The Senior Home Tour Checklist</h2>
-      <p>Touring senior homes can feel overwhelming. Our 30-question checklist helps you see beyond the lobby — covering staffing, safety, food, activities, medical care, and the questions most families forget to ask.</p>
-      <a href="tour-checklist.html" class="btn btn-primary">Get the Free Checklist</a>
-    </div>
-    <div class="resource-art" aria-hidden="true">
-      <div class="paper-stack">
-        <div class="paper p1"></div>
-        <div class="paper p2"></div>
-        <div class="paper p3"></div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Senior Home Tour Checklist card removed per owner request; will revisit copy later -->
 
 <!-- Testimonials section removed — will be added once real reviews are collected -->
 
@@ -1140,7 +1146,7 @@ h3{font-size:1.4rem;line-height:1.35}
     </div>
     <aside class="card highlight">
       <h3>Service Area</h3>
-      <p>Ventura County and surrounding communities, including Camarillo, Oxnard, Thousand Oaks, Ventura, Simi Valley, Moorpark, Newbury Park, and Ojai.</p>
+      <p>Ventura County — including Camarillo, Oxnard, Thousand Oaks, Ventura, Simi Valley, Moorpark, Newbury Park, and Ojai.</p>
       <a href="#map" class="btn btn-ghost btn-sm">View service map →</a>
     </aside>
   </div>
@@ -1150,14 +1156,13 @@ h3{font-size:1.4rem;line-height:1.35}
   <div class="container">
     <header class="section-head reveal">
       <p class="eyebrow">Service Area</p>
-      <h2>Our 30-Mile Service Radius</h2>
-      <p>Based in Camarillo, we serve seniors and families throughout Ventura County and surrounding communities.</p>
+      <h2>Our Service Area</h2>
+      <p>Based in Camarillo, we serve seniors and families throughout Ventura County.</p>
     </header>
     <div class="map-wrap">
-      <div id="serviceMap" class="service-map" aria-label="Map showing Guiding Light Senior Placement service radius"></div>
+      <div id="serviceMap" class="service-map" aria-label="Map showing Guiding Light Senior Placement service area cities"></div>
       <div class="map-legend">
         <div><span class="dot dot-pin"></span>Based in Camarillo, CA</div>
-        <div><span class="dot dot-area"></span>30-mile service radius</div>
         <div><span class="dot dot-city"></span>Partner cities served</div>
       </div>
     </div>
@@ -1335,14 +1340,12 @@ function initServiceMap(){
   var camarillo = [34.2164, -119.0376];
   var map = L.map(el, { scrollWheelZoom:false }).setView(camarillo, 9);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'&copy; OpenStreetMap', maxZoom:18 }).addTo(map);
-  var radius = L.circle(camarillo, { radius:48280, color:'#a07c2c', weight:2, fillColor:'#c9a24a', fillOpacity:0.18 }).addTo(map);
   var officeIcon = L.divIcon({ className:'gl-pin gl-pin-office', html:'<div class="gl-pin-inner"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#a07c2c"/></svg></div>', iconSize:[40,40], iconAnchor:[20,20] });
-  var dirUrl = 'https://www.google.com/maps/dir/?api=1&destination=317+W+Ventura+Blvd+%231037+Camarillo+CA+93010';
-  L.marker(camarillo, {icon:officeIcon, zIndexOffset:1000}).addTo(map).bindPopup('<strong>Guiding Light Senior Placement</strong><br>317 W Ventura Blvd #1037<br>Camarillo, CA 93010<br><a href="tel:+17472226399">(747) 222-6399</a><br><a href="'+dirUrl+'" target="_blank" rel="noopener" class="map-dir-link">Get Directions →</a>');
+  L.marker(camarillo, {icon:officeIcon, zIndexOffset:1000}).addTo(map).bindPopup('<strong>Guiding Light Senior Placement</strong><br>Based in Camarillo, CA<br><a href="tel:+17472226399">(747) 222-6399</a>');
   var cities=[{name:'Oxnard',c:[34.1975,-119.1771]},{name:'Ventura',c:[34.2746,-119.2290]},{name:'Thousand Oaks',c:[34.1706,-118.8376]},{name:'Simi Valley',c:[34.2694,-118.7815]},{name:'Moorpark',c:[34.2856,-118.8820]},{name:'Newbury Park',c:[34.1842,-118.9095]},{name:'Ojai',c:[34.4480,-119.2429]}];
   var cityIcon = L.divIcon({ className:'gl-pin gl-pin-city', html:'<div class="gl-pin-city-inner"></div>', iconSize:[18,18], iconAnchor:[9,9] });
   cities.forEach(function(x){ var d='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(x.name+', CA'); L.marker(x.c,{icon:cityIcon}).addTo(map).bindTooltip(x.name,{direction:'top',offset:[0,-8]}).bindPopup('<strong>'+x.name+'</strong><br>Senior placement service area<br><a href="tel:+17472226399">Call (747) 222-6399</a><br><a href="'+d+'" target="_blank" rel="noopener" class="map-dir-link">Directions →</a>'); });
-  function refresh(){ map.invalidateSize(); map.fitBounds(radius.getBounds(),{padding:[20,20]}); }
+  function refresh(){ map.invalidateSize(); var allPts=[camarillo].concat(cities.map(function(x){return x.c;})); map.fitBounds(L.latLngBounds(allPts),{padding:[40,40]}); }
   setTimeout(refresh,100); setTimeout(refresh,400); setTimeout(refresh,1000);
   if ('IntersectionObserver' in window) new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)refresh();});},{threshold:.1}).observe(el);
   window.addEventListener('resize', function(){map.invalidateSize();});
