@@ -210,8 +210,8 @@ p{margin:0 0 1em}
 .service-card .ico svg{width:26px;height:26px}
 
 /* Steps timeline */
-.steps{counter-reset:step;list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative;align-items:stretch}
-@media(max-width:1100px){.steps{grid-template-columns:repeat(2,1fr)}}
+.steps{counter-reset:step;list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;position:relative;align-items:stretch}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:780px){.steps{grid-template-columns:1fr}}
 .steps li{position:relative;padding:1.5rem 1.25rem 1.15rem;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);text-align:center}
 .step-num{display:inline-flex;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:1.2rem;margin-bottom:.85rem;box-shadow:0 6px 14px rgba(160,124,44,.35)}
@@ -1084,7 +1084,7 @@ h3{font-size:1.4rem;line-height:1.35}
   <div class="container">
     <header class="section-head reveal">
       <p class="eyebrow">How It Works</p>
-      <h2>Our Complete Process</h2>
+      <h2>Three Easy Steps</h2>
       <p>We personalize your search to find a senior living community where your loved one will truly thrive.</p>
     </header>
     <ol class="steps timeline reveal">
@@ -1099,20 +1099,15 @@ h3{font-size:1.4rem;line-height:1.35}
       </li>
       <li>
         <span class="step-num">2</span>
-        <h3>Personalized Vetting</h3>
-        <p>We match your care needs and lifestyle preferences against our heavily vetted network of communities to find options that empower your independence and social well-being.</p>
-      </li>
-      <li>
-        <span class="step-num">3</span>
-        <h3>Guided Community Tours</h3>
-        <p>We schedule and accompany you on tours of the top-selected communities to ensure the right questions are asked.</p>
+        <h3>Personalized Vetting &amp; Guided Tours</h3>
+        <p>We match your care needs and lifestyle preferences against our heavily vetted network of communities, then schedule and accompany you on tours of the top matches to make sure the right questions get asked.</p>
         <ul class="check-list" style="text-align:left;margin-top:.6rem">
           <li><strong>Side-by-Side Advocacy:</strong> We walk through each environment with you to evaluate the atmosphere, staff engagement, and safety standards.</li>
           <li><strong>Real-Time Feedback:</strong> We help you debrief after each visit to compare how well the community aligns with your social and physical goals.</li>
         </ul>
       </li>
       <li>
-        <span class="step-num">4</span>
+        <span class="step-num">3</span>
         <h3>Final Placement &amp; Transition</h3>
         <p>We guide you through the final selection and paperwork to make move-in day as stress-free as possible.</p>
         <ul class="check-list" style="text-align:left;margin-top:.6rem">
@@ -1263,7 +1258,6 @@ h3{font-size:1.4rem;line-height:1.35}
     <div class="foot-links">
       <strong>Resources</strong>
       <a href="faq.html">FAQ</a>
-      <a href="tour-checklist.html">Free Tour Checklist</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="foot-contact">
@@ -1424,31 +1418,11 @@ window.addEventListener('hashchange', function(){ if (location.hash==='#map') in
   </div>
 </section>
 </template>
-<template id="page-tour-checklist">
-<section class="page-hero">
-  <div class="container">
-    <p class="eyebrow">Free Resource</p>
-    <h1>The Senior Home Tour Checklist</h1>
-    <p class="lede">30+ questions to help you see beyond the lobby. Click checkboxes as you tour, or print this page to take with you.</p>
-    <div class="cta-row">
-      <button onclick="window.print()" class="btn btn-primary">🖨️ Print this checklist</button>
-      <a href="index.html#contact" class="btn btn-ghost">Want us to walk you through? →</a>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container checklist reveal"><section class="check-group"><h2>Staffing & Care</h2><ul><li><label><input type="checkbox" /> <span>What is the staff-to-resident ratio during the day? At night?</span></label></li><li><label><input type="checkbox" /> <span>How long has the current administrator been here?</span></label></li><li><label><input type="checkbox" /> <span>Is there a registered nurse on-site or on-call 24/7?</span></label></li><li><label><input type="checkbox" /> <span>How are medications managed and tracked?</span></label></li><li><label><input type="checkbox" /> <span>What is the staff turnover rate?</span></label></li></ul></section><section class="check-group"><h2>Safety & Environment</h2><ul><li><label><input type="checkbox" /> <span>Are there call buttons in every room and bathroom?</span></label></li><li><label><input type="checkbox" /> <span>How is the facility secured for residents with dementia?</span></label></li><li><label><input type="checkbox" /> <span>Is the building licensed and when was the last inspection?</span></label></li><li><label><input type="checkbox" /> <span>How are falls and emergencies handled?</span></label></li><li><label><input type="checkbox" /> <span>Are rooms clean, well-lit, and odor-free?</span></label></li></ul></section><section class="check-group"><h2>Daily Life</h2><ul><li><label><input type="checkbox" /> <span>Can I see today's activity calendar?</span></label></li><li><label><input type="checkbox" /> <span>What does a typical day look like?</span></label></li><li><label><input type="checkbox" /> <span>Are residents engaged or sitting alone?</span></label></li><li><label><input type="checkbox" /> <span>Are pets, family visits, and outings encouraged?</span></label></li></ul></section><section class="check-group"><h2>Food & Dining</h2><ul><li><label><input type="checkbox" /> <span>Can residents choose meals or are they pre-set?</span></label></li><li><label><input type="checkbox" /> <span>Are special diets accommodated (diabetic, low-sodium, kosher, vegetarian)?</span></label></li><li><label><input type="checkbox" /> <span>May I sample a meal?</span></label></li><li><label><input type="checkbox" /> <span>What happens if a resident misses a meal?</span></label></li></ul></section><section class="check-group"><h2>Care Plans & Family</h2><ul><li><label><input type="checkbox" /> <span>How often are care plans reviewed?</span></label></li><li><label><input type="checkbox" /> <span>How are families kept informed of changes?</span></label></li><li><label><input type="checkbox" /> <span>What happens if needs increase — must my loved one move?</span></label></li><li><label><input type="checkbox" /> <span>What's the process for end-of-life and hospice support?</span></label></li></ul></section><section class="check-group"><h2>Cost & Contracts</h2><ul><li><label><input type="checkbox" /> <span>What's included in the base monthly rate?</span></label></li><li><label><input type="checkbox" /> <span>What triggers a rate increase or higher level of care?</span></label></li><li><label><input type="checkbox" /> <span>Are there move-in fees or community fees?</span></label></li><li><label><input type="checkbox" /> <span>What's the policy on refunds, deposits, and discharge?</span></label></li></ul></section><section class="check-group"><h2>Trust Your Gut</h2><ul><li><label><input type="checkbox" /> <span>Are residents smiling? Do they look well-groomed?</span></label></li><li><label><input type="checkbox" /> <span>Does the staff make eye contact with residents?</span></label></li><li><label><input type="checkbox" /> <span>Would I feel comfortable here myself?</span></label></li></ul></section></div>
-  <div class="container center" style="margin-top:2rem">
-    <p>Touring can feel overwhelming. We do this with families every week — let us help.</p>
-    <a href="tel:+17472226399" class="btn btn-primary btn-lg">📞 Call (747) 222-6399</a>
-  </div>
-</section>
-</template>
 <script>
 (function(){
-var pages={'faq':document.getElementById('page-faq'),'areas':document.getElementById('page-areas'),'privacy':document.getElementById('page-privacy'),'thanks':document.getElementById('page-thanks'),'tour-checklist':document.getElementById('page-tour-checklist')};
+var pages={'faq':document.getElementById('page-faq'),'areas':document.getElementById('page-areas'),'privacy':document.getElementById('page-privacy'),'thanks':document.getElementById('page-thanks')};
 function show(name){var main=document.getElementById('main');var tpl=pages[name];if(!main||!tpl){window.location.href=name+'.html';return;}main.innerHTML=tpl.innerHTML;window.scrollTo({top:0});main.querySelectorAll('script').forEach(function(o){var s=document.createElement('script');if(o.src)s.src=o.src;else s.textContent=o.textContent;o.parentNode.replaceChild(s,o);});var revs=main.querySelectorAll('.reveal');if(revs.length){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});revs.forEach(function(el){io.observe(el);});}if(name==='index'&&typeof initServiceMap==='function')setTimeout(initServiceMap,200);}
-document.body.addEventListener('click',function(ev){var a=ev.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';var m=href.match(/^(?:\.\/)?(index|faq|areas|privacy|thanks|tour-checklist)\.html(?:#(.+))?$/);if(m){ev.preventDefault();show(m[1]);if(m[2])setTimeout(function(){var t=document.getElementById(m[2]);if(t)t.scrollIntoView({behavior:'smooth'});},80);}});
+document.body.addEventListener('click',function(ev){var a=ev.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';var m=href.match(/^(?:\.\/)?(index|faq|areas|privacy|thanks)\.html(?:#(.+))?$/);if(m){ev.preventDefault();show(m[1]);if(m[2])setTimeout(function(){var t=document.getElementById(m[2]);if(t)t.scrollIntoView({behavior:'smooth'});},80);}});
 })();
 </script>
 

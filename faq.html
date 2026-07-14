@@ -793,7 +793,6 @@ h3{font-size:1.4rem;line-height:1.35}
     <div class="foot-links">
       <strong>Resources</strong>
       <a href="faq.html">FAQ</a>
-      <a href="tour-checklist.html">Free Tour Checklist</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="foot-contact">
@@ -859,9 +858,9 @@ document.querySelectorAll('.counter').forEach(function(el){
 </script>
 <script>
 (function(){
-var pages={'faq':document.getElementById('page-faq'),'areas':document.getElementById('page-areas'),'privacy':document.getElementById('page-privacy'),'thanks':document.getElementById('page-thanks'),'tour-checklist':document.getElementById('page-tour-checklist')};
+var pages={'faq':document.getElementById('page-faq'),'areas':document.getElementById('page-areas'),'privacy':document.getElementById('page-privacy'),'thanks':document.getElementById('page-thanks')};
 function show(name){var main=document.getElementById('main');var tpl=pages[name];if(!main||!tpl){window.location.href=name+'.html';return;}main.innerHTML=tpl.innerHTML;window.scrollTo({top:0});main.querySelectorAll('script').forEach(function(o){var s=document.createElement('script');if(o.src)s.src=o.src;else s.textContent=o.textContent;o.parentNode.replaceChild(s,o);});var revs=main.querySelectorAll('.reveal');if(revs.length){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});revs.forEach(function(el){io.observe(el);});}if(name==='index'&&typeof initServiceMap==='function')setTimeout(initServiceMap,200);}
-document.body.addEventListener('click',function(ev){var a=ev.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';var m=href.match(/^(?:\.\/)?(index|faq|areas|privacy|thanks|tour-checklist)\.html(?:#(.+))?$/);if(m){ev.preventDefault();show(m[1]);if(m[2])setTimeout(function(){var t=document.getElementById(m[2]);if(t)t.scrollIntoView({behavior:'smooth'});},80);}});
+document.body.addEventListener('click',function(ev){var a=ev.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';var m=href.match(/^(?:\.\/)?(index|faq|areas|privacy|thanks)\.html(?:#(.+))?$/);if(m){ev.preventDefault();show(m[1]);if(m[2])setTimeout(function(){var t=document.getElementById(m[2]);if(t)t.scrollIntoView({behavior:'smooth'});},80);}});
 })();
 </script>
 </body>
