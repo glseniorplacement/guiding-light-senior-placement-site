@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<article>
+
+<header class="post-hero">
+  <div class="post-hero-inner">
+    <a href="/blog/" class="post-back">← All Posts</a>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      {% if page.author %}<span class="sep">·</span><span>{{ page.author }}</span>{% endif %}
+      {% if page.category %}<span class="sep">·</span><span>{{ page.category }}</span>{% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+  </div>
+</header>
+
+{% if page.image %}
+<div class="post-featured-image">
+  <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}">
+</div>
+{% endif %}
+
+<div class="post-content">
+  <div class="post-content-inner">
+    {{ content }}
+
+    <div class="post-cta">
+      <h3>Need help placing a loved one?</h3>
+      <p>We're here 7 days a week. Free, no-pressure conversation with a family who's lived this journey.</p>
+      <div class="btn-row">
+        <a href="tel:{{ site.business.phone_link }}" class="btn btn-primary">Call {{ site.business.phone }}</a>
+        <a href="/#contact" class="btn btn-ghost">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</article>
+
+{% assign more_posts = site.posts | where_exp: "p", "p.url != page.url" | slice: 0, 3 %}
+{% if more_posts.size > 0 %}
+<section class="more-posts">
+  <div class="container">
+    <h2>More From The Blog</h2>
+    <div class="blog-grid">
+      {% for post in more_posts %}
+      <article class="post-card">
+        <a href="{{ post.url }}">
+          <div class="post-card-image">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
+            {% else %}
+            <div class="post-card-image-fallback">Guiding Light</div>
+            {% endif %}
+          </div>
+          <div class="post-card-body">
+            <div class="post-card-meta"><time>{{ post.date | date: '%B %-d, %Y' }}</time></div>
+            <h2>{{ post.title }}</h2>
+            {% if post.description %}<p>{{ post.description | truncate: 130 }}</p>{% endif %}
+            <div class="post-card-read">Read article →</div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

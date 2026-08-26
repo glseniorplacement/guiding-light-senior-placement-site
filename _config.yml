@@ -1,0 +1,77 @@
+title: "Guiding Light Senior Placement"
+description: "Family-founded senior placement service serving Ventura County. Personal, compassionate, and completely free for families."
+url: "https://glseniorplacement.com"
+baseurl: ""
+
+author:
+  name: "Guiding Light Senior Placement"
+  email: "glseniorplacement@gmail.com"
+
+# Only process files inside /_posts/, /_pages/, /blog/, /admin/ — leave root HTML alone
+include:
+  - _pages
+  - admin
+
+# Do NOT process these — they stay exactly as they are
+exclude:
+  - README.md
+  - HANDOFF.md
+  - DOMAIN-SETUP.md
+  - index.html.bak
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+
+# Permalink structure — clean URLs like /blog/post-title/
+permalink: /blog/:slug/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:slug/
+
+# Plugins (all built-in to GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Default front matter — every post automatically gets layout: post
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Feed config
+feed:
+  path: /blog/feed.xml
+
+# SEO
+lang: en_US
+timezone: America/Los_Angeles
+
+# No theme — we bring our own CSS
+theme: null
+
+# Encoding
+encoding: utf-8
+
+# Social — for jekyll-seo-tag Open Graph cards
+social:
+  name: "Guiding Light Senior Placement"
+  links:
+    - "https://glseniorplacement.com"
+
+# Business info (available as site.business in templates)
+business:
+  name: "Guiding Light Senior Placement, LLC"
+  phone: "(747) 222-6399"
+  phone_link: "+17472226399"
+  email: "glseniorplacement@gmail.com"
+  fax: "(805) 702-3266"
+  address: "317 W Ventura Blvd, Camarillo, CA 93010"
+  service_area: "Ventura County, California"
