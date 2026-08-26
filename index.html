@@ -158,13 +158,17 @@ p{margin:0 0 1em}
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
 .hero-scrim{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,28,.78),rgba(15,20,28,.45) 60%,rgba(160,124,44,.35));z-index:-1}
 .hero-inner{padding:1.5rem 1.25rem;max-width:780px}
-.hero h1{color:#fff;margin-bottom:.6rem}
+.hero h1{color:#fff;margin-bottom:.35rem}
 .hero h1 span{color:var(--gold-soft);font-style:italic}
+.hero .hero-subtitle{color:var(--gold-soft);font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2vw,1.35rem);margin:0 0 .9rem;letter-spacing:.01em;font-weight:500;line-height:1.35}
 .hero .lede{color:rgba(255,255,255,.92);font-size:1.05rem;line-height:1.55}
 .hero-points{list-style:none;margin:1rem 0 0;padding:0;display:flex;gap:1rem;flex-wrap:wrap;font-size:.9rem;color:rgba(255,255,255,.92)}
 .check-pill{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:.75rem;margin-right:.45rem;font-weight:700}
 
 /* Trust strip */
+.slogan-band{background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-deep));padding:.7rem 1rem;text-align:center;border-bottom:1px solid var(--line)}
+.slogan-text{font-family:var(--serif);font-style:italic;color:#fff;font-size:clamp(1rem,1.6vw,1.25rem);letter-spacing:.02em;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.slogan-dot{opacity:.85;margin:0 .35em}
 .trust-strip{background:linear-gradient(180deg,var(--cream),var(--cream-2));border-bottom:1px solid var(--line)}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:2.5rem 1.25rem;text-align:center;align-items:end}
 .trust-grid > div{display:flex;flex-direction:column;gap:.35rem;align-items:center}
@@ -291,6 +295,8 @@ p{margin:0 0 1em}
 .contact-side{display:flex;flex-direction:column;gap:.55rem}
 .contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:var(--radius);padding:.75rem .95rem;color:#fff;display:grid;grid-template-columns:auto 1fr;gap:.3rem .85rem;align-items:center;text-decoration:none;transition:.25s}
 .contact-card:hover{background:rgba(255,255,255,.14);transform:translateY(-2px);text-decoration:none}
+.contact-card-static{cursor:default}
+.contact-card-static:hover{background:rgba(255,255,255,.08);transform:none}
 .contact-card .ico-lg{grid-row:1/3;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));display:flex;align-items:center;justify-content:center;color:#fff}
 .contact-card .ico-lg svg{width:19px;height:19px}
 .contact-card .lbl{font-size:.78rem;color:rgba(255,255,255,.72);grid-column:2}
@@ -306,6 +312,7 @@ p{margin:0 0 1em}
 .foot-links,.foot-contact{display:flex;flex-direction:column;gap:.3rem;font-size:.9rem}
 .foot-links strong,.foot-contact strong{color:#fff;font-family:var(--serif);font-size:1rem;font-weight:700;margin-bottom:.25rem;letter-spacing:.01em}
 .foot-links a,.foot-contact a{color:rgba(255,255,255,.78)}
+.foot-static{color:rgba(255,255,255,.78);font-size:.9rem;line-height:1.9;display:block}
 .foot-links a:hover,.foot-contact a:hover{color:var(--gold-soft);text-decoration:none}
 .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem;padding-top:.6rem;font-size:.78rem}
 .foot-bottom p{margin:0;color:rgba(255,255,255,.55)}
@@ -968,6 +975,7 @@ h3{font-size:1.4rem;line-height:1.35}
   <div class="container hero-inner">
     <p class="eyebrow eyebrow-light">Ventura County · Family-Founded</p>
     <h1>Your Choice. Your Voice. <span>Your Home.</span></h1>
+    <p class="hero-subtitle">Helping You Find the Right Place to Call Home</p>
     <p class="lede">Finding the right senior home is one of life's hardest decisions. We make it personal, clear, and completely free — walking with you and your family from first call to move-in day.</p>
     <div class="cta-row">
       <a href="tel:+17472226399" class="btn btn-primary btn-lg">
@@ -977,9 +985,9 @@ h3{font-size:1.4rem;line-height:1.35}
       <a href="#contact" class="btn btn-ghost-light btn-lg">Request Free Consultation</a>
     </div>
     <ul class="hero-points">
-      <li><span class="check-pill">✓</span> 100% free to families</li>
-      <li><span class="check-pill">✓</span> Every facility personally vetted</li>
-      <li><span class="check-pill">✓</span> Available 7 days a week</li>
+      <li><span class="check-pill">✓</span> Compassionate guidance at no-cost to seniors and families</li>
+      <li><span class="check-pill">✓</span> Personalized referrals to Assisted Living and Residential Care Homes</li>
+      <li><span class="check-pill">✓</span> 20+ years hospice and senior care experience</li>
     </ul>
       <a href="#why" class="hero-scroll" aria-label="Scroll to learn more">
       <span class="hero-scroll-line"></span>
@@ -988,6 +996,9 @@ h3{font-size:1.4rem;line-height:1.35}
 </div>
 </section>
 
+<div class="slogan-band">
+  <div class="container"><span class="slogan-text">Quality Care <span class="slogan-dot">—</span> Because We Care</span></div>
+</div>
 <section class="trust-strip">
   <div class="container trust-grid">
     <div><strong>❤</strong><span>Family-founded &amp; family-run</span></div>
@@ -1012,8 +1023,8 @@ h3{font-size:1.4rem;line-height:1.35}
       </div>
       <div class="why-card">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Personally Vetted</h3>
-        <p>We visit every facility in person. We know the staffing, culture, and quality differences brochures don't show.</p>
+        <h3>We Personally Vet Every Facility</h3>
+        <p>We don't just read brochures — we personally visit each Assisted Living and Residential Care Home we recommend, so we know their unique strengths, services, and how staff treat residents on an ordinary day.</p>
       </div>
       <div class="why-card">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20"/><path d="M5 9c0-3.5 3-6 7-6s7 2.5 7 6-3 5-7 5-7 1.5-7 5 3 6 7 6 7-2.5 7-6"/></svg></div>
@@ -1043,14 +1054,14 @@ h3{font-size:1.4rem;line-height:1.35}
   <div class="container two-col reveal">
     <div>
       <p class="eyebrow">Our Story</p>
-      <h2>Born From Our Own Family's Journey</h2>
-      <p>When our own grandfather needed help, we discovered how hard it was to find the right home. The system felt fragmented — no one seemed to look at his whole story, his medical needs, and what truly made him feel at home.</p>
+      <h2>Our Grandfather Nick</h2>
+      <p>When our own Grandfather Nick needed help, we discovered how hard it was to find the right home. The system felt fragmented — no one seemed to look at his whole story, his medical needs, and what truly made him feel at home.</p>
       <p>Our family was able to navigate the gaps because of two decades of hospice care experience. We created Guiding Light Senior Placement so other families don't have to go through it alone — walking with you from the first call to move-in day with patience, honesty, and heart.</p>
       <p class="quote-callout">"We walk beside families to help them find a home that fits the person — not just the diagnosis."</p>
     </div>
     <figure class="figure">
       <img src="assets/grandpa.png" alt="Grandpa — the family journey that inspired Guiding Light Senior Placement" loading="lazy" decoding="async" />
-      <figcaption>Our grandfather — the journey that inspired Guiding Light.</figcaption>
+      <figcaption>Grandfather Nick — the journey that inspired Guiding Light.</figcaption>
     </figure>
   </div>
 </section>
@@ -1257,7 +1268,11 @@ h3{font-size:1.4rem;line-height:1.35}
           <span class="lbl">Email</span>
           <strong>glseniorplacement@gmail.com</strong>
         </a>
-<!-- Office visit card removed per owner request -->
+        <div class="contact-card contact-card-static">
+          <span class="ico-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 18v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><rect x="6" y="6" width="12" height="8" rx="1"/><path d="M8 10h8"/></svg></span>
+          <span class="lbl">Fax</span>
+          <strong>(805) 702-3266</strong>
+        </div>
       </div>
     </div>
   </div>
@@ -1295,7 +1310,7 @@ h3{font-size:1.4rem;line-height:1.35}
       <a href="tel:+17472226399">📞 (747) 222-6399</a>
       <a href="sms:+17472226399">💬 Text us</a>
       <a href="mailto:glseniorplacement@gmail.com">✉ glseniorplacement@gmail.com</a>
-<!-- Physical address and fax hidden per owner request -->
+      <span class="foot-static">🖨 Fax (805) 702-3266</span>
     </div>
   </div>
   <div class="container foot-bottom">
