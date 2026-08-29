@@ -23,8 +23,20 @@ sitemap: false
       animation: spin 0.8s linear infinite; margin-right: 14px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    #nc-root:not(:empty) ~ .loading-screen { display: none; }
   </style>
+  <script>
+    // Hide loading screen once Decap CMS renders its UI
+    (function() {
+      var check = setInterval(function() {
+        var root = document.getElementById('nc-root');
+        if (root && root.childElementCount > 0) {
+          var ls = document.querySelector('.loading-screen');
+          if (ls) ls.remove();
+          clearInterval(check);
+        }
+      }, 150);
+    })();
+  </script>
 </head>
 <body>
   <div class="loading-screen">Loading content manager…</div>
